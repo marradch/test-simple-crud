@@ -19,14 +19,12 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Is Admin</th>
                     <th width="280px">Action</th>
                 </tr>
                 @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->is_admin ? 'yes' : 'no' }}</td>
                         <td>
                             <form onsubmit="return confirm('Are you sure you want to delete this item?')" action="{{ route('users.destroy',$user->id) }}" method="POST">
 
